@@ -126,7 +126,7 @@ const scenes = [
         higher than those of others.
         <br><br>
         Feel free to explore the data in both charts to see if you could learn and find out more (hover your mouseover each stacked bar or data point to see more information about that country). You can click on the various filter 
-        buttons to filter for countries to display in the stacked bar chart, and also select a subregion in the scatter plot legend (eg. try pressing on Northern Europe on the top right of the legend) to highlight countries in 
+        buttons to filter for countries to display in the stacked bar chart, and also select a subregion in the scatter plot legend <b>(eg. try pressing on Northern Europe on the top right of the legend)</b> to highlight countries in 
         that subregion for both charts. Also check out the <a href="https://worldhappiness.report/data/">WHR Dashboard</a> and the <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">HDI Data Exploration</a> webpages for further insight.`,
         barChartFilter: data => data,
         scatterplotFilter: data => data,
