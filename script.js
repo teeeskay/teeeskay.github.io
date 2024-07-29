@@ -16,13 +16,14 @@ const scenes = [
         Dystopia as explained by WHR "is an imaginary country that has the world's least-happy people.", where its score is based on the world's lowest national averages for each of the six factors. Residuals are unexplained 
         components reflecting over- or under-explanations of the six factors for each country. Here we show Finland's (WHR happiness score rank 1) scores and breakdown for how much each factor contributes to the overall score 
         (data for each displayed country which you would later be able to explore on your own).
-        For more detailed information, check out WHR's <a href="https://worldhappiness.report/faq/">FAQ page</a> and the <a href="https://worldhappiness.report/ed/2024/#appendices-and-data">Statistical Appendix 1</a> writeup.`,
+        For more detailed information, check out WHR's <a href="https://worldhappiness.report/faq/">FAQ page</a> and the <a href="https://worldhappiness.report/ed/2024/#appendices-and-data">Statistical Appendix 1</a> writeup.
+        Now, click on "Next >>" to dive a little deeper into these factors.`,
         barChartFilter: data => data.slice(0, 10),
         scatterplotFilter: data => data,
         disableTooltips: true,
         fixedTooltipCountry: "Finland",
         fixedTooltipPosX: '125px',
-        fixedTooltipPosY: `700px`,
+        fixedTooltipPosY: `500px`,
         scatterAnnotations: false,
         stackedAnnotations: true
     },
@@ -39,8 +40,8 @@ const scenes = [
         higher overall happiness score, Denmark's total score from just the 6 key factors exceed that of Finland's, where we thus note that Finland's score stemming from residual (unexplained factors) is higher than Denmark's. 
         A similar pattern where certain countries have higher residual scores but lower scores from the 6 key factors than other slightly lower ranking countries could be found. 
         <br><br>
-        While a minor observation in terms of how much influence such residuals have to each country's overall happiness score, we point this out to note how unexplained factors to each country's happiness (Cantril ladder) score 
-        indeed exist, at least according to WHR's methodology.`,
+        While we made a minor observation in terms of how residuals may fluctuate and contribute to each country's overall happiness score, we pointed this out to note how unexplained factors to each country's happiness (Cantril ladder) score 
+        indeed exist, at least according to WHR's methodology. This list of 6 key factors and a Dystopia benchmark are therefore not necessarily exhaustive, although they explain most of the happiness score data seen.`,
         barChartFilter: data => data.filter(d => d.ladderScore > 6.5),
         scatterplotFilter: data => data,
         disableTooltips: true,
@@ -65,7 +66,7 @@ const scenes = [
         high on education may not necessarily offset the lack of the other aforementioned 4 factors in WHR (social support, freedom, generosity, corruption perception) and other unexplained factors (residual). 
         <br><br>
         Interestingly, on a closer look, Hong Kong's scores for the 6 key factors sum up to 4.984 (Finland is at 5.658 with Dystopia + residual at 2.082), while its Dystopia + residual score was actually determined to be at 0.333 
-        (lower than the supposed Dystopia constant itself). While this warrants further analysis, and perhaps a deeper find into how WHR may have determined or explained this, the happiness or Cantril ladder score, and data from 
+        (lower than the supposed Dystopia constant itself). While this warrants further analysis, and perhaps a deeper dive into how WHR may have determined or explained this, the happiness or Cantril ladder score, and data from 
         the other factors are nonetheless based on supposedly the same methods carried out for all countries. We could thus only assume there are other factors at play and there exists a different approach to dissecting and 
         understanding this. Note that although in the tooltip and original dataset Hong Kong is stated as a "country", it is actually not one (i.e. it is a city in China), but is likely split as such in the WHR's categorization as 
         being a former British colony, Hong Kong has long developed differently overall as a city and society from its Chinese counterparts.
@@ -73,13 +74,13 @@ const scenes = [
         We further observe that there indeed appears to be an overall pattern where countries with higher HDI values also have higher happiness scores (notice how the data points in the scatter plot tend towards a line with an upward
         slope from bottom left to top right, assuming we were to attempt to fit a linear regression line here.) The key insight however remains that despite certain places having high HDI scores (which as a measurement for human 
         development, is related to well-being which encompasses happiness), they may not necessarily have higher happiness scores. Likewise, while some other countries may not score high on HDI (which could likely be defined here as 
-        >=0.9), they nonetheless score high on happiness / the Cantril ladder (likely defined here as >=6.5). An example is Mexico, with a HDI of 0.781, and happiness score of 6.678.`,
+        >=0.9), they nonetheless score fairly high on happiness / the Cantril ladder (likely defined here as >=6.5). An example is Mexico, with a HDI of 0.781, and happiness score of 6.678.`,
         barChartFilter: data => data.filter(d => d.ladderScore > 6.5),
         scatterplotFilter: data => data,
         disableTooltips: true,
         fixedTooltipCountry: "Hong Kong S.A.R. of China",
-        fixedTooltipPosX: '1300px',
-        fixedTooltipPosY: `800px`,
+        fixedTooltipPosX: '1325px',
+        fixedTooltipPosY: `400px`,
         scatterAnnotations: true,
         stackedAnnotations: false
     },
@@ -124,9 +125,9 @@ const scenes = [
         realize there are indeed certain subregions (Northern Europe, Western Europe, and Oceania) whose happiness and HDI scores are generally 
         higher than those of others.
         <br><br>
-        Feel free to explore the data in both charts to see if you could learn and find out more. You can on the various filter buttons to filter for countries to display in the stacked bar chart, and also select a subregion in the 
-        scatter plot legend to highlight countries in that subregion for both charts. Also check out the <a href="https://worldhappiness.report/data/">WHR Dashboard</a> and the 
-        <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">HDI Data Exploration</a> webpages for further insight.`,
+        Feel free to explore the data in both charts to see if you could learn and find out more (hover your mouseover each stacked bar or data point to see more information about that country). You can click on the various filter 
+        buttons to filter for countries to display in the stacked bar chart, and also select a subregion in the scatter plot legend (eg. try pressing on Northern Europe on the top right of the legend) to highlight countries in 
+        that subregion for both charts. Also check out the <a href="https://worldhappiness.report/data/">WHR Dashboard</a> and the <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">HDI Data Exploration</a> webpages for further insight.`,
         barChartFilter: data => data,
         scatterplotFilter: data => data,
         disableTooltips: false,
