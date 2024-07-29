@@ -323,7 +323,7 @@ function scene1(data) {
         .attr("x", (width / 2 - 70))
         .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
-        .style("font-size", "16px")
+        .style("font-size", "18px")
         .style("text-decoration", "underline")
         .text("Happiness Score Breakdown by Country");
 
@@ -331,7 +331,7 @@ function scene1(data) {
         .attr("x", (width / 2) - 100)
         .attr("y", height - 70)
         .attr("text-anchor", "middle")
-        .style("font-size", "12px")
+        .style("font-size", "15px")
         .text("Country");
 
     g.append("text")
@@ -340,12 +340,12 @@ function scene1(data) {
         .attr("x", 0 - (height / 2) + 70)
         .attr("dy", "1em")
         .attr("text-anchor", "middle")
-        .style("font-size", "12px")
+        .style("font-size", "15px")
         .text("Happiness Score");
 
     const legend = g.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 12)
         .attr("text-anchor", "start")
         .attr("transform", `translate(${c_width + margin.right - 150},${margin.top + 50})`)
         .selectAll("g")
@@ -447,7 +447,7 @@ function scene1_scatterplot(data) {
         .attr("x", (width / 2 - 30))
         .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
-        .style("font-size", "16px")
+        .style("font-size", "18px")
         .style("text-decoration", "underline")
         .text("Happiness Score vs HDI by Country");
 
@@ -455,7 +455,7 @@ function scene1_scatterplot(data) {
         .attr("x", (width / 2) - 100)
         .attr("y", height - 70)
         .attr("text-anchor", "middle")
-        .style("font-size", "12px")
+        .style("font-size", "15px")
         .text("HDI");
 
     g.append("text")
@@ -464,12 +464,12 @@ function scene1_scatterplot(data) {
         .attr("x", 0 - (height / 2) + 70)
         .attr("dy", "1em")
         .attr("text-anchor", "middle")
-        .style("font-size", "12px")
+        .style("font-size", "15px")
         .text("Happiness Score");
 
     const legend = g.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 12)
         .attr("text-anchor", "start")
         .selectAll("g")
         .data(color.domain())
