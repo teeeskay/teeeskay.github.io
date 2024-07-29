@@ -93,7 +93,7 @@ const scenes = [
             have relatively lower HDI values (0.806 at rank 64 and 0.781 at rank 77 respectively), as opposed to higher happiness scores`, title: "Northern and Central America" }, x: 525, y: 200, dy: 50, dx: 50 },
         ],
         scatterplotAnnotations: [
-            { note: { label: `5/10 Northern Europe countries (lowest WHR rank being Latvia at 46, score of 6.234) and 3/7 Western Europe countries (lowest rank being France at 27, score of 6.609) are in the top 10, where these 
+            { note: { label: `5/10 of Northern Europe countries (lowest WHR rank being Latvia at 46, score of 6.234) and 3/7 of Western Europe countries (lowest rank being France at 27, score of 6.609) are in the top 10, where these 
             2 subregions are geographically next to each other as well. This is in contrast to the bottom 10 in the WHR, which are in subregions South Asia, West Asia, Southern Africa, West Africa, Central Africa, and East Africa.
             In fact, the bottom 50 are all in these subregions, with the addition of 3 countries in Southeast Asia (Laos, Myanmar and Cambodia)`, title: "Northern and Western Europe" }, x: 630, y: 120, dy: 50, dx: -50 },
         ],
