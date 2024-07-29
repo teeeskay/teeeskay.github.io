@@ -29,9 +29,9 @@ const scenes = [
     },
     {
         annotations: [
-            { note: { label: `Note how GDP per capita and Social Support are consistently the top 2 contributing factors to each country's happiness score`, title: "Top 2 factors" }, x: 125, y: 450, dy: 50, dx: 50, subject: { radius: 30, radiusPadding: 5 } },
+            { note: { label: `Note how GDP per capita and Social Support are consistently the top 2 contributing factors to each country's happiness score`, title: "Top 2 factors" }, x: 120, y: 400, dy: 50, dx: 50, subject: { radius: 30, radiusPadding: 5 } },
             { note: { label: `Observe how while each of the remaining 4 sub-bar sizes look fairly similar across countries, Perceptions of Corruption and Generosity seem to differ for various countries.
-            Interestingly, the remaining 4 factors' sub-bars seem to add up to roughly similar sizes to each of the top 2 factors with certain exceptions`, title: "Remaining 4 factors" }, x: 485, y: 325, dy: 50, dx: 50, subject: { radius: 30, radiusPadding: 5 } }
+            Interestingly, the remaining 4 factors' sub-bars seem to add up to roughly similar sizes to each of the top 2 factors with certain exceptions`, title: "Remaining 4 factors" }, x: 485, y: 300, dy: 50, dx: 50, subject: { radius: 30, radiusPadding: 5 } }
         ],
         description: `Now that we have a decent understanding of what each factor represents, let us make more observations. Here we refreshed the same dataset in our stacked bar chart, this time showing countries whose happiness
         scores are higher than 6.5. We looked a little deeper into how each factor seems to contribute to a country's happiness score, observing a few patterns. 
@@ -51,7 +51,7 @@ const scenes = [
     {
         scatterplotAnnotations: [
             { note: { label: `While Singapore's happiness score still sits fairly high at 6.523 (WHR rank 30), despite being rank 9 in HDI, its happiness score pales in comparison to the top 10.
-            Hong Kong on the other hand, fares worse at a happiness score of 5.316 (WHR rank 86), and starkly so despite being rank 4 in HDI at 0.956`, title: "High HDI, but not so happy" }, x: 710, y: 300, dy: 50, dx: -50, subject: { radius: 30, radiusPadding: 5 } },
+            Hong Kong on the other hand, fares worse at a happiness score of 5.316 (WHR rank 86), and starkly so despite being rank 4 in HDI at 0.956`, title: "High HDI, but not so happy" }, x: 665, y: 270, dy: 50, dx: -50, subject: { radius: 30, radiusPadding: 5 } },
         ],
         description: `Besides WHR's happiness score and its contributing factors, we also obtained data from the human development index (HDI), where the HDI consists of 
         <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">3 key indicators</a> in life expectancy, education, and GNI per capita. While HDI doesn't necessarily measure happiness, it does
@@ -79,23 +79,23 @@ const scenes = [
         scatterplotFilter: data => data,
         disableTooltips: true,
         fixedTooltipCountry: "Hong Kong S.A.R. of China",
-        fixedTooltipPosX: '1325px',
-        fixedTooltipPosY: `400px`,
+        fixedTooltipPosX: '1275px',
+        fixedTooltipPosY: `375px`,
         scatterAnnotations: true,
         stackedAnnotations: false
     },
     {
         annotations: [
             { note: { label: `While Israel can be considered to be in West Asia, where most countries in this subregion tend to have relatively lower happiness scores as well as HDI values,
-            Israel is the exception, and ranks 5th in the WHR, and 25th in HDI at a score of 0.915`, title: "Israel" }, x: 165, y: 150, dy: 50, dx: 50 },
+            Israel is the exception, and ranks 5th in the WHR, and 25th in HDI at a score of 0.915`, title: "Israel" }, x: 150, y: 150, dy: 50, dx: 50 },
             { note: { label: `If we broaden our filter criteria to the top 25 countries (Germany being 25th) in the WHR (again, out of 143 in the dataset), we would expect to include Northern America as a subregion 
             (which is just Canada and the United States) as well. Central America would also be included, with Costa Rica and Mexico (as previously mentioned) being the countries filtered for. Interestingly, these 2 countries 
-            have relatively lower HDI values (0.806 at rank 64 and 0.781 at rank 77 respectively), as opposed to higher happiness scores`, title: "Northern and Central America" }, x: 600, y: 250, dy: 50, dx: 50 },
+            have relatively lower HDI values (0.806 at rank 64 and 0.781 at rank 77 respectively), as opposed to higher happiness scores`, title: "Northern and Central America" }, x: 525, y: 200, dy: 50, dx: 50 },
         ],
         scatterplotAnnotations: [
             { note: { label: `5/10 Northern Europe countries (lowest WHR rank being Latvia at 46, score of 6.234) and 3/7 Western Europe countries (lowest rank being France at 27, score of 6.609) are in the top 10, where these 
             2 subregions are geographically next to each other as well. This is in contrast to the bottom 10 in the WHR, which are in subregions South Asia, West Asia, Southern Africa, West Africa, Central Africa, and East Africa.
-            In fact, the bottom 50 are all in these subregions, with the addition of 3 countries in Southeast Asia (Laos, Myanmar and Cambodia)`, title: "Northern and Western Europe" }, x: 685, y: 115, dy: 50, dx: -50 },
+            In fact, the bottom 50 are all in these subregions, with the addition of 3 countries in Southeast Asia (Laos, Myanmar and Cambodia)`, title: "Northern and Western Europe" }, x: 630, y: 120, dy: 50, dx: -50 },
         ],
         description: `Another interesting trend we have observed upon further categorizing countries into subregions as defined by the <a href="https://en.wikipedia.org/wiki/United_Nations_geoscheme">UN Geoscheme</a> is
         that countries in the top 10 ranking of happiness scores, as one would intuitively expect, tend to belong to regions (or rather subregions as officially defined) that are considered more developed than others, and congregate
@@ -216,9 +216,9 @@ function processSceneOneData(data) {
 }
 
 function scene1(data) {
-    const width = 800;
+    const width = 850;
     const height = 700;
-    const margin = { top: 40, right: 30, bottom: 50, left: 60 };
+    const margin = { top: 40, right: 150, bottom: 100, left: 60 };
     const c_width = width - margin.left - margin.right;
     const c_height = height - margin.top - margin.bottom;
 
@@ -286,38 +286,62 @@ function scene1(data) {
         .attr("height", d => y(d[0]) - y(d[1]))
         .attr("width", x.bandwidth());
     
-        series.selectAll("rect")
-            .on("mouseover", (event, d) => {
-                if (tooltipsEnabled) {
-                    d3.select("#tooltip")
-                        .style("left", `${event.pageX + 20}px`)
-                        .style("top", `${event.pageY}px`)
-                        .style("opacity", 1)
-                        .style("display", "block")
-                        .html(`
-                            <strong>Country:</strong> ${d.data.country}<br>
-                            <strong>Subregion:</strong> ${d.data.subregion}<br>
-                            <strong>HDI:</strong> ${d.data.hdi}<br>
-                            <strong>Happiness Score:</strong> ${d.data.ladderScore}<br>
-                            <br>
-                            <strong>--- Happiness Score Breakdown ---</strong><br>
-                            <strong>GDP per capita:</strong> ${d.data.gdp}<br>
-                            <strong>Social Support:</strong> ${d.data.socialSupport}<br>
-                            <strong>Healthy Life Expectancy:</strong> ${d.data.lifeExpectancy}<br>
-                            <strong>Freedom to make life choices:</strong> ${d.data.freedom}<br>
-                            <strong>Generosity:</strong> ${d.data.generosity}<br>
-                            <strong>Perception of Corruption:</strong> ${d.data.corruption}<br>
-                            <strong>Dystopia + Residual:</strong> ${d.data.dystopiaResidual}
-                        `);
-                    }
-                })
-            .on("mouseout", () => {
-                if (tooltipsEnabled) {
-                    d3.select("#tooltip")
-                        .style("opacity", 0)
-                        .style("display", "none");
-                    }
-                });
+    series.selectAll("rect")
+        .on("mouseover", (event, d) => {
+            if (tooltipsEnabled) {
+                d3.select("#tooltip")
+                    .style("left", `${event.pageX + 20}px`)
+                    .style("top", `${event.pageY}px`)
+                    .style("opacity", 1)
+                    .style("display", "block")
+                    .html(`
+                        <strong>Country:</strong> ${d.data.country}<br>
+                        <strong>Subregion:</strong> ${d.data.subregion}<br>
+                        <strong>HDI:</strong> ${d.data.hdi}<br>
+                        <strong>Happiness Score:</strong> ${d.data.ladderScore}<br>
+                        <br>
+                        <strong>--- Happiness Score Breakdown ---</strong><br>
+                        <strong>GDP per capita:</strong> ${d.data.gdp}<br>
+                        <strong>Social Support:</strong> ${d.data.socialSupport}<br>
+                        <strong>Healthy Life Expectancy:</strong> ${d.data.lifeExpectancy}<br>
+                        <strong>Freedom to make life choices:</strong> ${d.data.freedom}<br>
+                        <strong>Generosity:</strong> ${d.data.generosity}<br>
+                        <strong>Perception of Corruption:</strong> ${d.data.corruption}<br>
+                        <strong>Dystopia + Residual:</strong> ${d.data.dystopiaResidual}
+                    `);
+                }
+            })
+        .on("mouseout", () => {
+            if (tooltipsEnabled) {
+                d3.select("#tooltip")
+                    .style("opacity", 0)
+                    .style("display", "none");
+                }
+            });
+
+    g.append("text")
+        .attr("x", (width / 2 - 70))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .text("Happiness Score Breakdown by Country");
+
+    g.append("text")
+        .attr("x", (width / 2) - 100)
+        .attr("y", height - 70)
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("Country");
+
+    g.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2) + 70)
+        .attr("dy", "1em")
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("Happiness Score");
 
     const legend = g.append("g")
         .attr("font-family", "sans-serif")
@@ -348,9 +372,9 @@ function scene1(data) {
 function scene1_scatterplot(data) {
     const filtered_data = data.filter(d => d.hdi !== 0);
 
-    const width = 800;
+    const width = 850;
     const height = 700;
-    const margin = { top: 40, right: 30, bottom: 50, left: 60 };
+    const margin = { top: 40, right: 130, bottom: 100, left: 60 };
     const c_width = width - margin.left - margin.right;
     const c_height = height - margin.top - margin.bottom;
 
@@ -419,6 +443,30 @@ function scene1_scatterplot(data) {
             }
         });
 
+    g.append("text")
+        .attr("x", (width / 2 - 30))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .text("Happiness Score vs HDI by Country");
+
+    g.append("text")
+        .attr("x", (width / 2) - 100)
+        .attr("y", height - 70)
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("HDI");
+
+    g.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2) + 70)
+        .attr("dy", "1em")
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("Happiness Score");
+
     const legend = g.append("g")
         .attr("font-family", "sans-serif")
         .attr("font-size", 10)
@@ -440,13 +488,13 @@ function scene1_scatterplot(data) {
         });
 
     legend.append("rect")
-        .attr("x", c_width - 19)
+        .attr("x", c_width - 10)
         .attr("width", 19)
         .attr("height", 19)
         .attr("fill", color);
 
     legend.append("text")
-        .attr("x", c_width - 24)
+        .attr("x", c_width+14)// - 24)
         .attr("y", 9.5)
         .attr("dy", "0.32em")
         .text(d => d);
