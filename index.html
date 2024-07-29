@@ -1,7 +1,90 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .scene_narrative {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+        .chart {
+            margin: 1%;
+            width: 48%;
+            height: auto;
+            box-sizing: border-box;
+        }
+        #tooltip {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #000;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .stacked_controls {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .controls button {
+            margin: 20px 10px;
+            padding: 20px 20px;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+        .intro {
+            font-size: 19px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="intro">Understanding our own happiness and well-being is an innate desire amongst people across the entire world. The <a href="https://worldhappiness.report/ed/2024/">World Happiness Report 2024 (WHR)</a>
+        was published earlier in March this year, where <a href="https://worldhappiness.report/ed/2024/happiness-of-the-younger-the-older-and-those-in-between/">figure 2.1 in the report</a> (scroll down the page to find it) 
+        paints a highly explanatory picture of the key factors that likely contribute to happiness (and by how much) in a ranked list of 143 countries. Here we explore 
+        <a href="https://worldhappiness.report/ed/2024/#appendices-and-data">WHR's data</a>, together with the <a href="https://hdr.undp.org/data-center/country-insights#/ranks">Human Development Index (HDI)</a> values 
+        scored based on data in 2022 to find certain trends in these 2 index scores amongst various countries.
+    </div>
+    <div class="controls">
+        <button onclick="prevScene()">Previous Scene</button>
+        <button onclick="nextScene()">Next Scene</button>
+    </div>
+    <div class="scene_narrative" id="scene_narrative"></div>
+    <div class="stacked_controls">
+        <div class="chart-filters hidden">
+            <button onclick="filterBarChart('all')">All</button>
+            <button onclick="filterBarChart('top10')">Top 10</button>
+            <button onclick="filterBarChart('top20')">Top 20</button>
+            <button onclick="filterBarChart('top30')">Top 30</button>
+            <button onclick="filterBarChart('bottom10')">Bottom 10</button>
+            <button onclick="filterBarChart('bottom20')">Bottom 20</button>
+            <button onclick="filterBarChart('bottom30')">Bottom 30</button>
+        </div>
+    </div>
+    <div class="chart-container">
+        <div id="chart" class="chart"></div>
+        <div id="bar-legend" class="legend-container"></div>
+        <div id="scatterplot" class="chart"></div>
+    </div>
+    <div id="tooltip"></div>    
+    <script src="script.js"></script>
 </body>
 </html>
