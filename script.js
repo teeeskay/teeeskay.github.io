@@ -5,7 +5,7 @@ const scenes = [
             residual values for each country differ, and as mentioned by the WHR, the residual represents other factors not explained by the six key factors`, title: "Dystopia + residual" }, x: 525, y: 150, dy: 50, dx: 50, subject: { radius: 30, radiusPadding: 5 } },
         ],
         description: `On the left here we have a chart displaying the top 10 countries based on WHR's happiness score, using a method called the Cantril ladder, where respondents were asked to think of a ladder,
-         with the best possible life for them being a 10, and worst possible a 10. Various sources were used to gather relevant data for each of the following 6 key factors, where regression analyses were then done
+         with the best possible life for them being a 10, and worst possible a 0. Various sources were used to gather relevant data for each of the following 6 key factors, where regression analyses were then done
          to determine how much each factor explains a portion of the happiness score, on top of a benchmark score of Dystopia + residual.
         <br><br>
         More specifically, data for GDP per capita is from World Development Indicators (WDI), and healthy life expectancies are based on World Health Organization's (WHO) Global Health Observatory data repository. Social support is 
